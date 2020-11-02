@@ -13,7 +13,7 @@ command "data(DRG_data)}
 \item{stat}{Desired calculation statistic as a string: "mean", "median", or "sd"}
 }
 \value{
-A data frame containing the statistics by DRG code for Average Medicare Payments
+A data frame containing the statistics for medical procedures by DRG code for Average Medicare Payments
 }
 \description{
 This function takes a data frame containing Average Medicare Payments for different medical procedures and their

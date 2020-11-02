@@ -8,11 +8,11 @@
 #' command "data(DRG_data)
 #' @param stat Desired calculation statistic as a string: "mean", "median", or "sd"
 #'
-#' @return A data frame containing the statistics by DRG code for Average Medicare Payments
+#' @return A data frame containing the statistics for medical procedures by DRG code for Average Medicare Payments
 #' @export
 #'
-#' @importFrom dplyr group_by
-#' @importFrom dplyr summarize
+#' @import dplyr
+#' @import stringr
 #'
 #'
 #' @examples
@@ -22,14 +22,14 @@
 #'                                 stat = "mean")
 #'
 drg_stats_medicare <- function(data, stat) {
-  stat_opt <- ## Create a vector containing valid statistics to use for comparison of input
+  statVec <- ## Create a vector containing valid statistics to use for comparison of input
     c(
       "mean",
       "median",
       "sd")
   FUN <- get(stat) ## Get the object from the string
   colname <- paste0(str_to_title(stat),".Average.Medicare.Payments") ## Create the new column name adding the stat calculated
-  if (stat %in% stat_opt) { ## Check to see if the statistics calculation is valid
+  if (stat %in% statVec) { ## Check to see if the statistics calculation is valid
     drg_stat <- data %>%
       group_by(DRG.Definition) %>% ## Group data by DRG Definitions
       summarize(!!colname := FUN(Average.Medicare.Payments)) ## Calculate the statistic and store in new variable

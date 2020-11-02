@@ -1,0 +1,18 @@
+#' drgfuncs: A package for manipulating and plotting medical procedure data by DRG data
+#'
+#' The drgfuncs package currently only has two functions for working with medical procedure data from data.cms.gov.
+#'
+#' @section drgfuncs Functions:
+#' drg_boxplot - A function for creating boxplots from one three different payment types: Average Medicare Payments,
+#' Average Total Payments, and Average Covered Charges by DRG code.
+#'
+#' drg_stats_medicare - A function for creating a data frame that calculates a statistic (mean, median, and standard
+#' deviation) by DRG code for Average Medicare Payments.
+#'
+#' Data: This function also contains data stored in a variable "DRG_data". This data can be accessed by running the
+#' command "data(DRG_data)"
+#'
+#' @docType package
+#' @name drgfuncs
+NULL
+#> NULL

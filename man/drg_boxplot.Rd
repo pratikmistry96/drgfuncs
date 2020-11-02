@@ -2,18 +2,19 @@
 % Please edit documentation in R/drg_boxplot.R
 \name{drg_boxplot}
 \alias{drg_boxplot}
-\title{Create DRG Plot}
+\title{Create DRG Boxplot}
 \usage{
-drg_boxplot(data, option)
+drg_boxplot(data, colOpt)
 }
 \arguments{
 \item{data}{Data frame containing data from data.cms.gov. The data can be loaded from the package
 using the command "data(DRG_data)"}
 
-\item{option}{Desired column for calculation a a string: "Average.Medicare.Payments", "Average.Covered.Charges", or "Average.Total.Payments"}
+\item{colOpt}{Desired column for calculation a a string: "Average.Medicare.Payments", "Average.Covered.Charges",
+or "Average.Total.Payments"}
 }
 \value{
-A ggplot object of a boxplot of payments by DRG code
+A ggplot object of a boxplot of medical procedure payments by DRG code
 }
 \description{
 This function takes a data frame containing Average Medicare Payments, Average Total Payments, and Average Covered
@@ -21,8 +22,10 @@ Charges for various hospital charges organized by DRG medical procedure codes, a
 boxplots for each DRG code for one of the data columns.
 }
 \examples{
-data(drg_data)
+~ Load Data ~
+data(DRG_data)
 
-drg_plot(drg_data, "Average.Covered.Charges")
+drg_boxplot(data = DRG_data,
+            colOpt = "Average.Covered.Charges")
 
 }
