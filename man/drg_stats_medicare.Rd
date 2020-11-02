@@ -7,7 +7,8 @@
 drg_stats_medicare(data, stat)
 }
 \arguments{
-\item{data}{Data frame containing data from data.cms.gov}
+\item{data}{Data frame containing data from data.cms.gov. The data can be loaded from the package using the
+command "data(DRG_data)}
 
 \item{stat}{Desired calculation statistic as a string: "mean", "median", or "sd"}
 }

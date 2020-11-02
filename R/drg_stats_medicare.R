@@ -4,7 +4,8 @@
 #' DRG codes at various hospitals, and it calculates a either the standard deviation, mean, or median for each DRG
 #' code and returns a data frame for further manipulation.
 #'
-#' @param data Data frame containing data from data.cms.gov
+#' @param data Data frame containing data from data.cms.gov. The data can be loaded from the package using the
+#' command "data(DRG_data)
 #' @param stat Desired calculation statistic as a string: "mean", "median", or "sd"
 #'
 #' @return A data frame containing the statistics by DRG code for Average Medicare Payments

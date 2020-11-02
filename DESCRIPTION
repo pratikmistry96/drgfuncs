@@ -7,6 +7,8 @@ Maintainer: The package maintainer <prm4006@med.cornell.edu>
 Description: This package was created as an assignment for my Data Science I course. Currently, this package contains 
  functions that will allow you to extract or plot DRG data from the data.cms.gov. This package currently only contains 
  two functions drg_stats and drg_plot for the user to calculate statistics by DRG codes and create boxplots by DRG code.
+    This function contains data stored in the variable DRG_data. This data can be used to run the functions within the 
+ package.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

@@ -4,7 +4,8 @@
 #' Charges for various hospital charges organized by DRG medical procedure codes, and it creates and returns a plot of
 #' boxplots for each DRG code for one of the data columns.
 #'
-#' @param data  Data frame containing data from data.cms.gov
+#' @param data  Data frame containing data from data.cms.gov. The data can be loaded from the package
+#' using the command "data(DRG_data)"
 #' @param option Desired column for calculation a a string: "Average.Medicare.Payments", "Average.Covered.Charges", or "Average.Total.Payments"
 #'
 #' @return A ggplot object of a boxplot of payments by DRG code
@@ -50,8 +51,7 @@ drg_boxplot <- function(data, option) {
                                    angle = 90,
                                    hjust = 1)
       ) +
-      scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
-      scale_y_log10()
+      scale_y_log10(labels = function(x) format(x, scientific = FALSE))
     return(plt) ## Return the plot
   } else{
     stop("Invalid Payment Column") ## Error message is the user inputs the wrong

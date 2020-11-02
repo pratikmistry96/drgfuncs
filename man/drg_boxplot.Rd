@@ -7,7 +7,8 @@
 drg_boxplot(data, option)
 }
 \arguments{
-\item{data}{Data frame containing data from data.cms.gov}
+\item{data}{Data frame containing data from data.cms.gov. The data can be loaded from the package
+using the command "data(DRG_data)"}
 
 \item{option}{Desired column for calculation a a string: "Average.Medicare.Payments", "Average.Covered.Charges", or "Average.Total.Payments"}
 }
