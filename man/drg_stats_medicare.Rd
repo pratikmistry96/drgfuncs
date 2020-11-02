@@ -15,14 +15,14 @@ drg_stats_medicare(data, stat)
 A data frame containing the statistics by DRG code for Average Medicare Payments
 }
 \description{
-This function takes a data frame containing Average Medicare Payments, Average Total Payments, and Average Covered
-Charges for various hospital charges organized by DRG medical procedure codes, and it calculates the mean,
-standard deviation, or median for the Average Medicare Payments by DRG code
+This function takes a data frame containing Average Medicare Payments for different medical procedures and their
+DRG codes at various hospitals, and it calculates a either the standard deviation, mean, or median for each DRG
+code and returns a data frame for further manipulation.
 }
 \examples{
-data(drg_data)
+data(DRG_data)
 
-mean_medicare <- drg_stats(data = drg_data,
+mean_medicare <- drg_stats_medicare(data = DRG_data,
                                 stat = "mean")
 
 }

@@ -7,7 +7,7 @@
 #' @param data  Data frame containing data from data.cms.gov
 #' @param option Desired column for calculation a a string: "Average.Medicare.Payments", "Average.Covered.Charges", or "Average.Total.Payments"
 #'
-#' @return A boxplot of payments by DRG code
+#' @return A ggplot object of a boxplot of payments by DRG code
 #' @export
 #'
 #' @importFrom ggplot2 ggplot
@@ -21,7 +21,7 @@
 #'
 #' drg_plot(drg_data, "Average.Covered.Charges")
 #'
-drg_plot <- function(data, option) {
+drg_boxplot <- function(data, option) {
   ## Create a vector containing valid column names, if the user doesn't select the correct column. It will throw an
   ## error
   opt <- c(
@@ -43,14 +43,15 @@ drg_plot <- function(data, option) {
       labs(
         title = paste0(gsub(".", " ", option, fixed = TRUE), " by DRG Code"),
         x = "Medical Procedure (DRG)",
-        y = "Payment ($) - Log Scaled"
+        y = "Log - Payment ($)"
       ) +
       theme(
         axis.text.x = element_text(size = 6, ## Adjust the axis text
                                    angle = 90,
                                    hjust = 1)
       ) +
-      scale_y_log10() ## log scale the y-axis
+      scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
+      scale_y_log10()
     return(plt) ## Return the plot
   } else{
     stop("Invalid Payment Column") ## Error message is the user inputs the wrong
